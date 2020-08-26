@@ -20,6 +20,8 @@ class axil_seq extends axil_base_seq;
        `uvm_do_with(req, {req.read_write == 0; req.data == 1; req.address == 0;});
        //start MLP
        `uvm_do_with(req, {req.read_write == 1; req.data == 1; req.address == 0;});
+	   //random reading from MLP
+	   `uvm_do_with(req, {req.read_write == 0; req.data == 0; req.address == 0;});
        `uvm_do_with(req, {req.read_write == 1; req.data == 0; req.address == 0;});
        `uvm_info(get_type_name(), $sformatf("image %d is being classified ",image), UVM_NONE);
        forever begin
