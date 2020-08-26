@@ -33,10 +33,10 @@ class axis_driver extends uvm_driver#(axis_frame);
 			 vif.s_axis_tlast=0;
 			 vif.s_axis_tvalid=0;
 		 //end
-		 classif_done = 0;
+		 //classif_done = 0;
 		 
-		 for (j = 0; j < 81; j++)
-		 begin
+		 //for (j = 0; j < 81; j++)
+		 //begin
 			 seq_item_port.get_next_item(req);
 			 //`uvm_info(get_type_name(), $sformatf("Driver sending...\n%s", req.sprint()), UVM_HIGH)
 			 // do actual driving here
@@ -52,7 +52,7 @@ class axis_driver extends uvm_driver#(axis_frame);
 				@(posedge vif.clk iff vif.s_axis_tready);
 			 end
 			 seq_item_port.item_done();
-		 end
+		 //end
       end
    endtask : run_phase
    
